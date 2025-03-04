@@ -1,0 +1,2858 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/"
+     xml:base="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:TKSDASDOnto="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/1.0.0"/>
+        <rdfs:comment>A knowledge model for facilitating tacit knowledge sharing in distributed agile software development team.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#assignsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#assignsTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAssignedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Team member is assigned to artifact</rdfs:comment>
+        <rdfs:label>assignsTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#canShareTacitKnowledgeWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#canShareTacitKnowledgeWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member can share tacit knoweldge with another member based on their trustworthiness</rdfs:comment>
+        <rdfs:label>canShareTacitKnowledgeWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#enablesCollaboration"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:comment>Team member can collaborate through collaboration mechanism</rdfs:comment>
+        <rdfs:label>collaboratesThrough</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#consideredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#consideredBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#considersFactors"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member considers factors</rdfs:comment>
+        <rdfs:label>consideredBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#considersDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#considersDependency">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#dependencyConsideredBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Dependency"/>
+        <rdfs:comment>Team member considers dependency</rdfs:comment>
+        <rdfs:label>considersDependency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#considersFactors -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#considersFactors">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors"/>
+        <rdfs:comment>Team member considers factors</rdfs:comment>
+        <rdfs:label>considersFactors</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contains">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasLocation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Location contains team member</rdfs:comment>
+        <rdfs:label>contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member contrinutes to artifact</rdfs:comment>
+        <rdfs:label>contributedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Team member contributes to documentation of artifact</rdfs:comment>
+        <rdfs:label>contributesTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#dependencyConsideredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#dependencyConsideredBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Dependency"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member considers dependency</rdfs:comment>
+        <rdfs:label>dependencyConsideredBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#dependsOnDomain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#dependsOnDomain">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasDomainDependency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:comment>Relationship showing that an artifact depeneds on a specific knowledge domain</rdfs:comment>
+        <rdfs:label>dependsOnDomain</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#enablesCollaboration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#enablesCollaboration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Collaboration mechanism is used by team member</rdfs:comment>
+        <rdfs:label>enablesCollaboration</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#facilitatesCollaboration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#facilitatesCollaboration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isFacilitatedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:comment>Tools which facilitates collaboration</rdfs:comment>
+        <rdfs:label>facilitatesCollaboration</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasAvailability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasAvailability">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAvailableFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member has availability for ceremonies</rdfs:comment>
+        <rdfs:label>hasAvailability</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasDomainDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasDomainDependency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Artifact has knowledge dependency</rdfs:comment>
+        <rdfs:label>hasDomainDependency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasExpertiseIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasExpertiseIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#providedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:comment>Team member has an expertise</rdfs:comment>
+        <rdfs:label>hasExpertiseIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasKnowledgeDomain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasKnowledgeDomain">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isKnowledgeDomainOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:comment>Team member has knoweldge domain</rdfs:comment>
+        <rdfs:label>hasKnowledgeDomain</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <rdfs:comment>Team member has location</rdfs:comment>
+        <rdfs:label>hasLocation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasNotCompletedHandOver -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasNotCompletedHandOver">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isNotCompletedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Team member has not yet completed handing over artifact</rdfs:comment>
+        <rdfs:label>hasNotCompletedHandOver</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRoleOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <rdfs:comment>Team member has certain role</rdfs:comment>
+        <rdfs:label>hasRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasWillingness -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasWillingness">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isWillingnessOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Willingness"/>
+        <rdfs:comment>Team member is willing to share knoweldge</rdfs:comment>
+        <rdfs:label>hasWillingness</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAssignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAssignedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Artifact is assigned to team member</rdfs:comment>
+        <rdfs:label>isAssignedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAvailableFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAvailableFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <rdfs:comment>Team member is available for ceremony</rdfs:comment>
+        <rdfs:label>isAvailableFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isExpertiseFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isExpertiseFor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#requiresExpertise"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Artifact needs expertise</rdfs:comment>
+        <rdfs:label>isExpertiseFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isExpertiseRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isExpertiseRelatedTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#relatesToExpertise"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:comment>Knwoeldge domain is realted to expertise</rdfs:comment>
+        <rdfs:label>isExpertiseRelatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isFacilitatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isFacilitatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:comment>Tools facilitates collaboration mechanism</rdfs:comment>
+        <rdfs:label>isFacilitatedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isKnowledgeDomainOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isKnowledgeDomainOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member has domain knowledge</rdfs:comment>
+        <rdfs:label>isKnowledgeDomainOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isManagedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isManagedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#managesArtifact"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProjectManagementTools"/>
+        <rdfs:comment>Artifact is manged by tools</rdfs:comment>
+        <rdfs:label>isManagedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isNotCompletedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isNotCompletedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>artifact is not completed by team member</rdfs:comment>
+        <rdfs:label>isNotCompletedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRelatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRelatedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRelatedTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <rdfs:comment>Artifact relates to enough documentation</rdfs:comment>
+        <rdfs:label>isRelatedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRelatedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Enough documentation relates to artifact</rdfs:comment>
+        <rdfs:label>isRelatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRequiredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRequiredBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#requiresKnowledgeDomain"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>team meber requires domain knowledge</rdfs:comment>
+        <rdfs:label>isRequiredBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRoleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRoleOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member has role</rdfs:comment>
+        <rdfs:label>isRoleOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isSupportedByKnowledgeSharing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isSupportedByKnowledgeSharing">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportsKnowledgeSharing"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <rdfs:comment>Artifact is supported by enough documentation</rdfs:comment>
+        <rdfs:label>isSupportedByKnowledgeSharing</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isUsedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usesTool"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:comment>Tools is used by collboration mechanism</rdfs:comment>
+        <rdfs:label>isUsedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isWillingnessOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isWillingnessOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Willingness"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member has willingness</rdfs:comment>
+        <rdfs:label>isWillingnessOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#managesArtifact -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#managesArtifact">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProjectManagementTools"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Project management tools is used to manage artifacts</rdfs:comment>
+        <rdfs:label>managesArtifact</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#methodologyUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#methodologyUsedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usesMethodology"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Scrum"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member uses methodology</rdfs:comment>
+        <rdfs:label>methodologyUsedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#providedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#providedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Expertise is provided by team member</rdfs:comment>
+        <rdfs:label>providedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#relatesToExpertise -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#relatesToExpertise">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:comment>Knowledge domain relates to specific expertise</rdfs:comment>
+        <rdfs:label>relatesToExpertise</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#requiresExpertise -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#requiresExpertise">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:comment>Artifact requires expertise</rdfs:comment>
+        <rdfs:label>requiresExpertise</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#requiresKnowledgeDomain -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#requiresKnowledgeDomain">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <rdfs:comment>Team member requires specific knoweldge domain</rdfs:comment>
+        <rdfs:label>requiresKnowledgeDomain</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#sharesTacitKnowledgeDuring -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#sharesTacitKnowledgeDuring">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#tacitKnowledgeSharedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <rdfs:comment>Team member shares tacit knoweldge during ceremonies</rdfs:comment>
+        <rdfs:label>sharesTacitKnowledgeDuring</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#sharesTacitKnowledgeTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#sharesTacitKnowledgeTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:comment>Team member shared tacit knowledge to tools</rdfs:comment>
+        <rdfs:label>sharesTacitKnowledgeTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportsArtifactDocumentation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeSharingTools"/>
+        <rdfs:comment>Artifact is supported by sharing tools</rdfs:comment>
+        <rdfs:label>supportedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportsArtifactDocumentation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportsArtifactDocumentation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeSharingTools"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>Knoweldge sharing tools supports artifact documentation</rdfs:comment>
+        <rdfs:label>supportsArtifactDocumentation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportsKnowledgeSharing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportsKnowledgeSharing">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:comment>If artifact is completed, it implies that it supports knowledge sharing</rdfs:comment>
+        <rdfs:label>supportsKnowledgeSharing</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#tacitKnowledgeSharedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#tacitKnowledgeSharedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member share tacit knowledge during ceremonies</rdfs:comment>
+        <rdfs:label>tacitKnowledgeSharedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#trusts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#trusts">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Team member trust another team member</rdfs:comment>
+        <rdfs:label>trusts</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:comment>Tools are used by team member</rdfs:comment>
+        <rdfs:label>usedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usesMethodology -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usesMethodology">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Scrum"/>
+        <rdfs:comment>Team member uses scrum</rdfs:comment>
+        <rdfs:label>usesMethodology</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usesTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#usesTool">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:comment>Collaboration mechanism used tools</rdfs:comment>
+        <rdfs:label>usesTool</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Description of artifact</rdfs:comment>
+        <rdfs:label>artifactDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactDurationInDays -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactDurationInDays">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Duration of artifact in days</rdfs:comment>
+        <rdfs:label>artifactDurationInDays</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactEffortType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactEffortType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Effort"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Artifact effort type needed</rdfs:comment>
+        <rdfs:label>artifactEffortType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactEffortValueInHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactEffortValueInHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Effort"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Artifact effort needed in hours</rdfs:comment>
+        <rdfs:label>artifactEffortValueInHours</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Artifact name</rdfs:comment>
+        <rdfs:label>artifactName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactUniqueCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#artifactUniqueCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>unique code for an artifact</rdfs:comment>
+        <rdfs:label>artifactUniqueCode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#availabilityStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#availabilityStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Availability status of team member</rdfs:comment>
+        <rdfs:label>availabilityStatus</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#availabilityWorkingHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#availabilityWorkingHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>availability of team members in hours</rdfs:comment>
+        <rdfs:label>availabilityWorkingHours</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ceremonyDurationInHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ceremonyDurationInHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Ceremony duration in hours</rdfs:comment>
+        <rdfs:label>ceremonyDurationInHours</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ceremonyName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ceremonyName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Ceremony name</rdfs:comment>
+        <rdfs:label>ceremonyName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#communicationMode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#communicationMode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Communication mode of mechanism</rdfs:comment>
+        <rdfs:label>communicationMode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#documentationLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#documentationLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Documentation level of artifact</rdfs:comment>
+        <rdfs:label>documentationLevel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#expertiseName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#expertiseName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Expertise name</rdfs:comment>
+        <rdfs:label>expertiseName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#handingOverCompleted -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#handingOverCompleted">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Checks completion of handing over</rdfs:comment>
+        <rdfs:label>handingOverCompleted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isCompleted -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isCompleted">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Check if artifact is completed</rdfs:comment>
+        <rdfs:label>isCompleted</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isUpdated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isUpdated">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Check if artifact is updated</rdfs:comment>
+        <rdfs:label>isUpdated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#locationName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#locationName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Name of location</rdfs:comment>
+        <rdfs:label>locationName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#meetingRoom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#meetingRoom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Meeting room for face to face meeting</rdfs:comment>
+        <rdfs:label>meetingRoom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#memberName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#memberName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Name of team member</rdfs:comment>
+        <rdfs:label>memberName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#motivationLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#motivationLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Motivation level of team member</rdfs:comment>
+        <rdfs:label>motivationLevel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#promotesSharingCulture -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#promotesSharingCulture">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Checks if team member promotes sharing culture</rdfs:comment>
+        <rdfs:label>promotesSharingCulture</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#roleType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#roleType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Role of scrum role</rdfs:comment>
+        <rdfs:label>roleType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#specialisation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#specialisation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Specialisation of expertise</rdfs:comment>
+        <rdfs:label>specialisation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#timeZone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#timeZone">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>time zone of location</rdfs:comment>
+        <rdfs:label>timeZone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#trustLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#trustLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Trust level of team member</rdfs:comment>
+        <rdfs:label>trustLevel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#yearExperience -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#yearExperience">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Years of experience of team member</rdfs:comment>
+        <rdfs:label>yearExperience</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Scrum"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <rdfs:comment>Scrum artifacts such as the product backlog, sprint backlog, and increments.</rdfs:comment>
+        <rdfs:label>Artifact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ArtifactsCharacteristics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ArtifactsCharacteristics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors"/>
+        <rdfs:comment>Attributes of Scrum artifacts that impact tacit knowledge sharing.</rdfs:comment>
+        <rdfs:label>ArtifactsCharacteristics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Availability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Availability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#HumanResourceCharacteristics"/>
+        <rdfs:comment>The degree to which a team member is accessible to collaborate.</rdfs:comment>
+        <rdfs:label>Availability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Scrum"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <rdfs:comment>Scrum events like sprint planning, daily scrums, and retrospectives.</rdfs:comment>
+        <rdfs:label>Ceremonies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism">
+        <rdfs:comment>Mechanisms or processes used by team members to collaborate effectively.</rdfs:comment>
+        <rdfs:label>CollaborationMechanism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:comment>The mecahnism of exchanging information between team members.</rdfs:comment>
+        <rdfs:label>Communication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CommunicationTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CommunicationTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:comment>Tools like chat applications and video conferencing platforms.</rdfs:comment>
+        <rdfs:label>CommunicationTools</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Dependency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Dependency">
+        <rdfs:comment>Represents the reliance of one task, artifact, or team member on another for successful knowledge sharing or task completion.</rdfs:comment>
+        <rdfs:label>Dependency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DevOpsTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DevOpsTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Effort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Effort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ArtifactsCharacteristics"/>
+        <rdfs:comment>The amount of work required to complete a task or artifact.</rdfs:comment>
+        <rdfs:label>Effort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ScrumCharacteristics"/>
+        <rdfs:comment>Refers to the adequacy of documentation to support tacit knowledge sharing.</rdfs:comment>
+        <rdfs:label>EnoughDocumentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Dependency"/>
+        <rdfs:comment>The specific skills or knowledge possessed by a team member.</rdfs:comment>
+        <rdfs:label>Expertise</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors">
+        <rdfs:comment>The various characteristics that influence tacit knowledge sharing.</rdfs:comment>
+        <rdfs:label>Factors</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#HumanResourceCharacteristics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#HumanResourceCharacteristics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors"/>
+        <rdfs:comment>Attributes of team members that influence their ability to share knowledge.</rdfs:comment>
+        <rdfs:label>HumanResourceCharacteristics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#HumanResourceCharacteristics"/>
+        <rdfs:comment>The area of expertise or specialization of a team member.</rdfs:comment>
+        <rdfs:label>KnowledgeDomain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeSharingTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeSharingTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:comment>Platforms like wikis and knowledge repositories.</rdfs:comment>
+        <rdfs:label>KnowledgeSharingTools</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CollaborationMechanism"/>
+        <rdfs:comment>The exchange of information, skills, or expertise among team members.</rdfs:comment>
+        <rdfs:label>KnowlegdeSharing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SiteCharacteristics"/>
+        <rdfs:comment>Represents the geographical or physical location of team members in a distributed team.</rdfs:comment>
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProjectManagementTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProjectManagementTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:comment>Tools like Jira and Trello used for managing Scrum processes.</rdfs:comment>
+        <rdfs:label>ProjectManagementTools</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Scrum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Scrum">
+        <rdfs:comment>Represents the Scrum framework used for agile software development.</rdfs:comment>
+        <rdfs:label>Scrum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ScrumCharacteristics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ScrumCharacteristics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors"/>
+        <rdfs:comment>Attributes specific to the Scrum process that impact knowledge sharing.</rdfs:comment>
+        <rdfs:label>ScrumCharacteristics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SharingCulture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SharingCulture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ScrumCharacteristics"/>
+        <rdfs:comment>The degree to which team members are encouraged to share knowledge.</rdfs:comment>
+        <rdfs:label>SharingCulture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SiteCharacteristics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SiteCharacteristics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Factors"/>
+        <rdfs:comment>Factors related to the geographical location of team members.</rdfs:comment>
+        <rdfs:label>SiteCharacteristics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <rdfs:comment>Individuals within the Scrum team who collaborate and share knowledge.</rdfs:comment>
+        <rdfs:label>TeamMember</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Scrum"/>
+        <rdfs:comment>Roles within the Scrum team, such as Scrum Master, Product Owner, and Developer.</rdfs:comment>
+        <rdfs:label>TeamRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools">
+        <rdfs:comment>The digital tools used to facilitate tacit knowledge sharing.</rdfs:comment>
+        <rdfs:label>Tools</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Trustworthiness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Trustworthiness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#HumanResourceCharacteristics"/>
+        <rdfs:comment>The level of trustworthiness perceived in a team member.</rdfs:comment>
+        <rdfs:label>Trustworthiness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#VersionControlTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#VersionControlTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+        <rdfs:comment>Tools like Git for managing code and documents.</rdfs:comment>
+        <rdfs:label>VersionControlTools</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Willingness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Willingness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#HumanResourceCharacteristics"/>
+        <rdfs:comment>The readiness of a team member to share knowledge.</rdfs:comment>
+        <rdfs:label>Willingness</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#BitBucket -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#BitBucket">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#VersionControlTools"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Chat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Chat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+        <TKSDASDOnto:usesTool rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftTeams"/>
+        <TKSDASDOnto:communicationMode>Synchronous</TKSDASDOnto:communicationMode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Cindy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Cindy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:collaboratesThrough rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Chat"/>
+        <TKSDASDOnto:collaboratesThrough rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Email"/>
+        <TKSDASDOnto:collaboratesThrough rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#PairProgramming"/>
+        <TKSDASDOnto:collaboratesThrough rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#PeerReview"/>
+        <TKSDASDOnto:collaboratesThrough rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#VideoCall"/>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_UI_UX_Design"/>
+        <TKSDASDOnto:hasKnowledgeDomain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#UIUXDesign"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Italy"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_FE_Developer"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>Cindy</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>Moderate</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Confluence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Confluence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeSharingTools"/>
+        <TKSDASDOnto:supportsArtifactDocumentation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Handing_Over_Backlog_Task"/>
+        <TKSDASDOnto:supportsArtifactDocumentation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProductBacklog1"/>
+        <TKSDASDOnto:supportsArtifactDocumentation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintBacklog1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DailyScrum -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DailyScrum">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <TKSDASDOnto:ceremonyDurationInHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.25</TKSDASDOnto:ceremonyDurationInHours>
+        <TKSDASDOnto:ceremonyName>Daily Scrum Meeting</TKSDASDOnto:ceremonyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DatabaseDesign -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DatabaseDesign">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <TKSDASDOnto:relatesToExpertise rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Database_Optimisation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Documentation_ProductBacklog1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Documentation_ProductBacklog1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <TKSDASDOnto:isRelatedTo rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProductBacklog1"/>
+        <TKSDASDOnto:documentationLevel>Moderate</TKSDASDOnto:documentationLevel>
+        <TKSDASDOnto:isUpdated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TKSDASDOnto:isUpdated>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Documentation_SprintBacklog1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Documentation_SprintBacklog1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+        <TKSDASDOnto:isRelatedTo rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintBacklog1"/>
+        <TKSDASDOnto:documentationLevel>Moderate</TKSDASDOnto:documentationLevel>
+        <TKSDASDOnto:isUpdated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TKSDASDOnto:isUpdated>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Email -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Email">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+        <TKSDASDOnto:usesTool rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftOutlook"/>
+        <TKSDASDOnto:communicationMode>Asynchronous</TKSDASDOnto:communicationMode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_API_Integration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_API_Integration">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>API Integration</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>API Integration
+REST API</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Automation_Testing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Automation_Testing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Automation Testing</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Automation Testing
+Katalon
+Selenium</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Backend_Development -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Backend_Development">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Backend Development</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Java</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Cloud_Deployment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Cloud_Deployment">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Cloud Deployment</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Microsoft Azure</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Conflict_Resolution -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Conflict_Resolution">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Conflict Resolution</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Conflict Resolution</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Database_Optimisation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Database_Optimisation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Database Optimisation</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>MySQL
+Oracle
+Postgres
+MariaDB</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Managing_Pipelines -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Managing_Pipelines">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Managing Pipelines</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Jenkins</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Manual_Testing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Manual_Testing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Manual Testing</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>UI Testing
+Screen Testing
+Screen Flow</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Scrum_Practices -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Scrum_Practices">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Scrum practices</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Create ceremonies
+Start Sprint</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Task_Prioritisation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Task_Prioritisation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:providedBy rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tim"/>
+        <TKSDASDOnto:expertiseName>Task Prioritisation</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Prioritise tasks, spring backlog and product backlog</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_UI_UX_Design -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_UI_UX_Design">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>UI/UX Design</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>Angular
+HTML
+CSS</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Version_Control -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Version_Control">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Version Control</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>BitBucket
+Git</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Write_Test_Cases -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Write_Test_Cases">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise"/>
+        <TKSDASDOnto:expertiseName>Write Test Cases</TKSDASDOnto:expertiseName>
+        <TKSDASDOnto:specialisation>XRay
+Jira</TKSDASDOnto:specialisation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Handing_Over_Backlog_Task -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Handing_Over_Backlog_Task">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <TKSDASDOnto:isAssignedTo rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ryan"/>
+        <TKSDASDOnto:artifactEffortType>Database Optimization</TKSDASDOnto:artifactEffortType>
+        <TKSDASDOnto:artifactUniqueCode>HOBT1</TKSDASDOnto:artifactUniqueCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#High_Willingness -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#High_Willingness">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Willingness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Jane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Jane">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Manual_Testing"/>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Write_Test_Cases"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Mauritius"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ManualTester"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>Jane</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>Moderate</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#JavaDevelopment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#JavaDevelopment">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <TKSDASDOnto:relatesToExpertise rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Backend_Development"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Jenkins -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Jenkins">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DevOpsTools"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Jira -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Jira">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProjectManagementTools"/>
+        <TKSDASDOnto:managesArtifact rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProductBacklog1"/>
+        <TKSDASDOnto:managesArtifact rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintBacklog1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#John -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#John">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Backend_Development"/>
+        <TKSDASDOnto:hasKnowledgeDomain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#JavaDevelopment"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Mauritius"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_BE_Developer"/>
+        <TKSDASDOnto:trusts rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Lucas"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>John</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>Moderate</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:trustLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</TKSDASDOnto:trustLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Larry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Larry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Conflict_Resolution"/>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Scrum_Practices"/>
+        <TKSDASDOnto:hasKnowledgeDomain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ScrumMethodology"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Switzerland"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ScrumMaster"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>Larry</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>High</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Leo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Leo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Managing_Pipelines"/>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Version_Control"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Switzerland"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ConfigurationManager"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>Leo</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>High</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Italy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Italy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <TKSDASDOnto:locationName>Italy</TKSDASDOnto:locationName>
+        <TKSDASDOnto:timeZone>UTC +1 CET</TKSDASDOnto:timeZone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Mauritius -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Mauritius">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <TKSDASDOnto:locationName>Mauritius</TKSDASDOnto:locationName>
+        <TKSDASDOnto:timeZone>UTC+04:00</TKSDASDOnto:timeZone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Switzerland -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Switzerland">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <TKSDASDOnto:locationName>Switzerland</TKSDASDOnto:locationName>
+        <TKSDASDOnto:timeZone>UTC+01:00</TKSDASDOnto:timeZone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Vietnam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Vietnam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location"/>
+        <TKSDASDOnto:locationName>Vietnam</TKSDASDOnto:locationName>
+        <TKSDASDOnto:timeZone>UTC +7</TKSDASDOnto:timeZone>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Low_Willingness -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Low_Willingness">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Willingness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Lucas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Lucas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_API_Integration"/>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Cloud_Deployment"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Vietnam"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_DevOps"/>
+        <TKSDASDOnto:requiresKnowledgeDomain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#JavaDevelopment"/>
+        <TKSDASDOnto:trusts rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#John"/>
+        <TKSDASDOnto:trusts rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ryan"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>Lucas</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>Moderate</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:trustLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</TKSDASDOnto:trustLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftOutlook -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftOutlook">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CommunicationTools"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftTeams -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftTeams">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#CommunicationTools"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Moderate_Willingness -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Moderate_Willingness">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Willingness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#One-To-One_Meeting -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#One-To-One_Meeting">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+        <TKSDASDOnto:meetingRoom>1.15</TKSDASDOnto:meetingRoom>
+        <rdfs:comment>One-To-One Meeting</rdfs:comment>
+        <rdfs:label>One-To-One_Meeting</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#PairProgramming -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#PairProgramming">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+        <TKSDASDOnto:usesTool rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftTeams"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#PeerReview -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#PeerReview">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+        <TKSDASDOnto:usesTool rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#BitBucket"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProductBacklog1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ProductBacklog1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <TKSDASDOnto:requiresExpertise rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_API_Integration"/>
+        <TKSDASDOnto:artifactDurationInDays rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</TKSDASDOnto:artifactDurationInDays>
+        <TKSDASDOnto:artifactEffortType>API Integration</TKSDASDOnto:artifactEffortType>
+        <TKSDASDOnto:artifactEffortValueInHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</TKSDASDOnto:artifactEffortValueInHours>
+        <TKSDASDOnto:artifactName>Product Task 1</TKSDASDOnto:artifactName>
+        <TKSDASDOnto:artifactUniqueCode>PB1</TKSDASDOnto:artifactUniqueCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Rodri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Rodri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tools"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Automation_Testing"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Italy"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_AutomationTester"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>Rodri</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>High</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ryan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ryan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Backend_Development"/>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Database_Optimisation"/>
+        <TKSDASDOnto:hasKnowledgeDomain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#DatabaseDesign"/>
+        <TKSDASDOnto:hasKnowledgeDomain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#JavaDevelopment"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Mauritius"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_BE_Developer"/>
+        <TKSDASDOnto:trusts rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Lucas"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:handingOverCompleted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</TKSDASDOnto:handingOverCompleted>
+        <TKSDASDOnto:memberName>Ryan</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>Moderate</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:trustLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6</TKSDASDOnto:trustLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ScrumMethodology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ScrumMethodology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <TKSDASDOnto:relatesToExpertise rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Scrum_Practices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Sharepoint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Sharepoint"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintBacklog1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintBacklog1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <TKSDASDOnto:dependsOnDomain rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#UIUXDesign"/>
+        <TKSDASDOnto:artifactDurationInDays rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</TKSDASDOnto:artifactDurationInDays>
+        <TKSDASDOnto:artifactEffortType>Angular</TKSDASDOnto:artifactEffortType>
+        <TKSDASDOnto:artifactEffortValueInHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</TKSDASDOnto:artifactEffortValueInHours>
+        <TKSDASDOnto:artifactName>Sprint Task 1</TKSDASDOnto:artifactName>
+        <TKSDASDOnto:artifactUniqueCode>SB1</TKSDASDOnto:artifactUniqueCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintPlanning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintPlanning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <TKSDASDOnto:ceremonyDurationInHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</TKSDASDOnto:ceremonyDurationInHours>
+        <TKSDASDOnto:ceremonyName>Sprint Planning</TKSDASDOnto:ceremonyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintRetrospective -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintRetrospective">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <TKSDASDOnto:ceremonyDurationInHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</TKSDASDOnto:ceremonyDurationInHours>
+        <TKSDASDOnto:ceremonyName>Sprint Retrospective</TKSDASDOnto:ceremonyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintReview -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#SprintReview">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+        <TKSDASDOnto:ceremonyDurationInHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</TKSDASDOnto:ceremonyDurationInHours>
+        <TKSDASDOnto:ceremonyName>Sprint Review</TKSDASDOnto:ceremonyName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tacit_Knowledge_Sharing_Task -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tacit_Knowledge_Sharing_Task">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+        <TKSDASDOnto:isAssignedTo rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Lucas"/>
+        <TKSDASDOnto:artifactEffortType>Cloud-Based Deployments Knowledge</TKSDASDOnto:artifactEffortType>
+        <TKSDASDOnto:artifactUniqueCode>TKST1</TKSDASDOnto:artifactUniqueCode>
+        <TKSDASDOnto:isCompleted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TKSDASDOnto:isCompleted>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_AutomationTester -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_AutomationTester">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>Automation Tester</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_BE_Developer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_BE_Developer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>Backend Developer</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ConfigurationManager -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ConfigurationManager">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>Configuration Manager</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_DevOps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_DevOps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>DevOps</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_FE_Developer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_FE_Developer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>Frontend Developer</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ManualTester -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ManualTester">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>Manual Tester</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ProductOwner -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ProductOwner">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>Product Owner</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ScrumMaster -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ScrumMaster">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole"/>
+        <TKSDASDOnto:roleType>Scrum Master</TKSDASDOnto:roleType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Tim">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#collaboratesThrough"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowlegdeSharing"/>
+            </owl:Restriction>
+        </rdf:type>
+        <TKSDASDOnto:hasExpertiseIn rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_Task_Prioritisation"/>
+        <TKSDASDOnto:hasLocation rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Location_Switzerland"/>
+        <TKSDASDOnto:hasRole rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamRole_ProductOwner"/>
+        <TKSDASDOnto:availabilityStatus>Available</TKSDASDOnto:availabilityStatus>
+        <TKSDASDOnto:availabilityWorkingHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</TKSDASDOnto:availabilityWorkingHours>
+        <TKSDASDOnto:memberName>Tim</TKSDASDOnto:memberName>
+        <TKSDASDOnto:motivationLevel>High</TKSDASDOnto:motivationLevel>
+        <TKSDASDOnto:yearExperience rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</TKSDASDOnto:yearExperience>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#UIUXDesign -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#UIUXDesign">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#KnowledgeDomain"/>
+        <TKSDASDOnto:relatesToExpertise rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Expertise_UI_UX_Design"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#VideoCall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#VideoCall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Communication"/>
+        <TKSDASDOnto:usesTool rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#MicrosoftTeams"/>
+        <TKSDASDOnto:communicationMode>Synchronous</TKSDASDOnto:communicationMode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Wikis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Wikis"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/artifact">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/teamMember">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/tm">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/task">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/hours">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/requiredHours">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/doc">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/level">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/d">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a TeamMember has a Expertise that matches the requiresExpertise of a Task, then the team member contributes to that task.</rdfs:comment>
+        <rdfs:label>ContributesToArtifactByExpertise</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasExpertiseIn"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#requiresExpertise"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/t"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/d"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Determine team member&apos;s willingness to share tacit knowledge based on motivation level</rdfs:comment>
+        <rdfs:label>HighTeamMemberWillingness</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#motivationLevel"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                <swrl:argument2>High</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasWillingness"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#High_Willingness"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Determine team member&apos;s willingness to share tacit knowledge based on motivation level</rdfs:comment>
+        <rdfs:label>LowTeamWillingness</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#motivationLevel"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                <swrl:argument2>Low</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasWillingness"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Low_Willingness"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Determine team member&apos;s willingness to share tacit knowledge based on motivation level</rdfs:comment>
+        <rdfs:label>ModerateTeamMemberWillingness</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#motivationLevel"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                <swrl:argument2>Moderate</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasWillingness"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Moderate_Willingness"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Determine which team member has not yet completed the handing over task</rdfs:comment>
+        <rdfs:label>PendingHandingOver</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/artifact"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/teamMember"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAssignedTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/artifact"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/teamMember"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#handingOverCompleted"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/teamMember"/>
+                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasNotCompletedHandOver"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/teamMember"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/artifact"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Determine whether a team member promotes a sharing culture based on the number of completed artifacts</rdfs:comment>
+        <rdfs:label>PromoteSharingCulture</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/tm"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Artifact"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/task"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAssignedTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/task"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/tm"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isCompleted"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/task"/>
+                                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#promotesSharingCulture"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/tm"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Check if a team member&apos;s availabilityStatus is &quot;Available&quot; and their workingHours is greater than or equal to the duration of a Scrum ceremony</rdfs:comment>
+        <rdfs:label>AvailabiltyForCeremonies</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#availabilityStatus"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                <swrl:argument2>Available</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#availabilityWorkingHours"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/hours"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#Ceremonies"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#ceremonyDurationInHours"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/y"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/requiredHours"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual"/>
+                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/hours"/>
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/requiredHours"/>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isAvailableFor"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>To check whether the documentation is enough for an artifact</rdfs:comment>
+        <rdfs:label>EnoughDocumentationPresent</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#EnoughDocumentation"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/doc"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#documentationLevel"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/doc"/>
+                                <swrl:argument2>Moderate</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isUpdated"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/doc"/>
+                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#isRelatedTo"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/doc"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#supportsKnowledgeSharing"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/doc"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>Determine whether a TeamMember can share tacit knowledge with another</rdfs:comment>
+        <rdfs:label>TeamMemberTrustworthiness</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/b"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#trusts"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/a"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#trustLevel"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/b"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/level"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/level"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.7</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#canShareTacitKnowledgeWith"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/a"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a TeamMember has a KnowledgeDomain that matches the dependsOnDomain of a Task, then the team member contributes to that task.</rdfs:comment>
+        <rdfs:label>ContributesToArtifactByDomainKnowledge</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#TeamMember"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#hasKnowledgeDomain"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/d"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#dependsOnDomain"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/t"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/d"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto#contributesTo"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/x"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/ado/ontologies/2024/TKSDASDOnto/t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
